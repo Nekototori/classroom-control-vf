@@ -61,6 +61,6 @@ exec { "Some Crap":
   creates => '/etc/motd',
 }
 
-include users
+include skeleton
 
 }
