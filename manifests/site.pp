@@ -47,11 +47,18 @@ node default {
   include role::classroom
   notify { "I am slow!" : }
   
-file { '/etc/motd':
-  ensure => file,
-  owner => root,
-  group => root,
-  mode => '0644',
-  content => "We can use same Puppet resource types for various OSes\n",
+#file { '/etc/motd':
+#  ensure => file,
+#  owner => root,
+#  group => root,
+#  mode => '0644',
+#  content => "We can use same Puppet resource types for various OSes\n",
+#}
+
+exec { "Some Crap":
+  path    => '/usr/local/bin',
+  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => '/etc/motd',
 }
+
 }
