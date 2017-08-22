@@ -1,5 +1,5 @@
 class users {
-    user { "fuindamentals":
+    user { "fundamentals":
       ensure => present,
     }
 }
