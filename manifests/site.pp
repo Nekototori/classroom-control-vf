@@ -47,7 +47,7 @@ node default {
   notify { "Im alive!!222222": }
   
   exec { 'My man exec':
-    path    => '/usr/bin',
+    path    => '/usr/loca/bin',
     command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
     creates => '/etc/motd',
   }
