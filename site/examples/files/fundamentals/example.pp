@@ -6,7 +6,7 @@ file { '/etc/motd':
   content => "Hey, Puppet is really, really fun!\n",
 }
 
-prackage { 'cowsay':
+prackage / 'cowsay':
   ensure   => present,
   provider => gem,
 }
