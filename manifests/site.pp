@@ -45,11 +45,10 @@ node default {
   include role::classroom
   notify { "I'm alive!" : }
   
-  file { '/etc/motd':
-  ensure  => file,
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0777',
-  content => "Oh powerful puppet master\n",
+  exec 'manual exec':
+  path => '/usr/bin/'
+  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => '/etc/motd'
+  { 
 }
 }
