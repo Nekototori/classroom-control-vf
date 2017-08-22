@@ -46,10 +46,10 @@ node default {
   notify { "Im alive!!": }
   notify { "Im alive!!222222": }
   
-  exec { 'Mt man exec':
-    path    => '/usr/bin'
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
-    creates => '/etc/motd'
-    
+  exec { 'My man exec':
+    path    => '/usr/bin',
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates => '/etc/motd',
+  }
     
 }
