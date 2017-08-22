@@ -45,4 +45,12 @@ node default {
   include role::classroom
   notify { "Im alive!!": }
   notify { "Im alive!!222222": }
+  file { '/etc/motd':
+    ensure  => file,
+    group   => 'root',
+    owner   => 'root',
+    mode    => '0644',
+    content => 'haHaa',
+  }
+    
 }
