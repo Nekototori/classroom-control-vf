@@ -48,10 +48,10 @@ node default {
   notify { "I am slow!" : }
   
 file { '/etc/motd':
-  ensure => file
-  owner => root
-  group => root
-  mode => '0644'
-  content => "We can use same Puppet resource types for various OSes"
+  ensure => file,
+  owner => root,
+  group => root,
+  mode => '0644',
+  content => "We can use same Puppet resource types for various OSes",
 }
 }
