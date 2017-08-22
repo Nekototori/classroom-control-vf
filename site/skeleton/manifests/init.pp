@@ -1,12 +1,12 @@
 class skeleton {
 
-file { "/etc/skel"
+file { "/etc/skel":
   ensure => directory,
   user => root,
   group => root,
 }
 
-file { "/etc/skel/.bashrc"
+file { "/etc/skel/.bashrc":
   ensure => file,
   user => root,
   group => root,
