@@ -50,6 +50,6 @@ node default {
     content => "puppet training motd.",
     owner => 'root',
     group => 'root',
-    mode => 0644,
+    mode => '0644',
   }
 }
