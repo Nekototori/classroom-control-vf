@@ -52,6 +52,6 @@ file { '/etc/motd':
   owner => root,
   group => root,
   mode => '0644',
-  content => "We can use same Puppet resource types for various OSes",
+  content => "We can use same Puppet resource types for various OSes\n",
 }
 }
