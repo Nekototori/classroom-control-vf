@@ -44,3 +44,4 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+notify { "It's a TEST!!" }
