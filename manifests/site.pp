@@ -44,4 +44,12 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { "I'm alive!" : }
+  
+  file { '/etc/motd':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0777',
+  content => "Oh powerful puppet master\n",
+}
 }
