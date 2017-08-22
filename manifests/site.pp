@@ -42,6 +42,20 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
+include role::classroom
+  
+  # Class test
+  file { '/etc/motd':
+   ensure  => file,  
+   owner   => 'root',  
+    group   => 'root',  
+    mode    => '0644',  
+    content => "Hey, Puppet is fun NOT!\n",
+    }
+
+package { 'cowsay':  
+  ensure   => present,  
+provider => gem,
+}
 }
 notify { "It's a TEST!!": }
