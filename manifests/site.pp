@@ -43,17 +43,12 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "I'm alive!" : }
   
   exec { 'My manual executable':
     path    => ['/usr/local/bin', '/usr/bin', '/usr/sbin' ],
     command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
     creates => '/etc/motd',
   }
-  exec 'manual exec':
-  path => '/usr/local/bin/'
-  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-  creates => '/etc/motd',
-  { 
-}
+    
+  
 }
