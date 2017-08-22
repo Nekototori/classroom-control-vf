@@ -51,6 +51,10 @@ exec { 'My Try':
   creates => '/etc/motd',
 }
 
+include users
+
+include skeletom
+
 #file { '/etc/motd':  
  # ensure  => file,  
  # owner   => 'root',  
