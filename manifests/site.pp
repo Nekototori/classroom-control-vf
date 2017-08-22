@@ -44,4 +44,11 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { "tzericli is here" : } 
-}
+
+file { '/etc/motd' : 
+  ensure  => 'file',
+  group   => '0',
+  mode    => '0644',
+}   
+
+} 
