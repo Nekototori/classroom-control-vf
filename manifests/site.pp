@@ -60,5 +60,7 @@ node default {
   
   include users
   include skeleton
+  #ensure that class 'skeleton' is loaded/defined before class 'users'
+  Class['skeleton'] -> Class['users'] 
 
 }
