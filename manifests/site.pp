@@ -38,13 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-file { `/etc/motd`:
-  ensure => file
-  owner => root
-  group => group
-  mode => `0644`
-  content => "We can use same Puppet resource types for various OSes"
-}
+
 
 node default {
   # This is where you can declare classes for all nodes.
@@ -52,4 +46,12 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { "I am slow!" : }
+  
+file { '/etc/motd':
+  ensure => file
+  owner => root
+  group => root
+  mode => '0644'
+  content => "We can use same Puppet resource types for various OSes"
+}
 }
