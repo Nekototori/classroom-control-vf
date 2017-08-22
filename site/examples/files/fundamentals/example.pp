@@ -3,7 +3,7 @@ file { '/etc/motd':
   owner   => 'root',
   group   => 'root',
   mode    => '0644',
-  content => "Hey, Puppet is fun!\n",
+  content => "Hey, Puppet is really, really fun!\n",
 }
 
 package { 'cowsay':
