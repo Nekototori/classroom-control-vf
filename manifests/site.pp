@@ -43,5 +43,5 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "I'm alive!" : }
+  notify { "I am slow!" : }
 }
