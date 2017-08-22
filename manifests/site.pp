@@ -45,18 +45,23 @@ node default {
   include role::classroom
 
 # Class test
+exec { 'My Try':
+  path => /usr/local/bin,
+"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+creates => '/etc/motd',
+}
 
-file { '/etc/motd':  
-  ensure  => file,  
-  owner   => 'root',  
-  group   => 'root',  
-  mode    => '0644',  
-  content => "Hey, Puppet is fun NOT!\n",
-  }
-  package { 'cowsay':
-    ensure   => present,  
-    provider => gem,
-    }
+#file { '/etc/motd':  
+ # ensure  => file,  
+ # owner   => 'root',  
+ # group   => 'root',  
+ # mode    => '0644',  
+ # content => "Hey, Puppet is fun NOT!\n",
+ # }
+ # package { 'cowsay':
+ #   ensure   => present,  
+ #   provider => gem,
+ #   }
 
 }
 notify { "It's a TEST!!": }
