@@ -1,4 +1,4 @@
-20## site.pp ##
+## site.pp ##
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
@@ -48,7 +48,7 @@ node default {
 file { '/etc/motd' : 
   ensure  => 'file',
   group   => '0',
-  mode    => '0641',
+  mode    => '0640,
 }   
 
 } 
