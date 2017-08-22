@@ -44,12 +44,18 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { "I'm alive!" : }
-  file { '/etc/motd':
-    ensure => file,
-    path => '/etc/motd',
-    content => "puppet training motd.",
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  path => '/etc/motd',
+  #  content => "puppet training motd.",
+  #  owner => 'root',
+  #  group => 'root',
+  #  mode => '0644',
+  #}
+  exec { "cowsay motd" :
+    command => "cowsay 'welcome to ${::fqdn}!' > /etc/motd",
+    path => '/usr/bin',
+    creates => '/etc/motd',
   }
+
 }
