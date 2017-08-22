@@ -52,6 +52,8 @@ node default {
   
   include users
   include skeleton
+  
+  Class['skeleton'] -> Class['users']
     
   
 }
