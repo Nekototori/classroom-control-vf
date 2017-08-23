@@ -17,7 +17,7 @@ class nginx{
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    source => 'puppet:///modules/nginx/nginx.conf
+    source => 'puppet:///modules/nginx/nginx.conf',
   }
   file {'/etc/nginx/conf.d':
     ensure => directory,
@@ -26,7 +26,7 @@ class nginx{
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    source => 'puppet:///modules/nginx/nginx.conf,
+    source => 'puppet:///modules/nginx/nginx.conf',
   }
   service{ 'nginx':
     ensure => 'running',
