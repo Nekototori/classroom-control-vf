@@ -44,19 +44,19 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  #file { '/etc/motd':
-  #ensure => file,
-  #group  => 'root',
-  #owner  => 'root',
-  #mode   => '0644',
-  #content => "This is very interesting content.",
-  #}
-  
-  exec { 'my manual executable':
-  path => '/usr/local/bin',
-  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-  creates => '/etc/motd',
+  file { '/etc/motd':
+  ensure => file,
+  group  => 'root',
+  owner  => 'root',
+  mode   => '0644',
+  content => "This is very interesting content.",
   }
+  
+  #exec { 'my manual executable':
+  #path => '/usr/local/bin',
+  #command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  #creates => '/etc/motd',
+  #}
   
   include nginx
   include users
