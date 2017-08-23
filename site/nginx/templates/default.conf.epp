@@ -1,6 +1,6 @@
-server {    
-    listen 80;
-    root /var/www;    
-    index index.html index.htm;
-    server_name _;
-    }
+node default { 
+        class { 'nginx':
+        root => '/var/www',
+        port => '80',
+    }
+  }
