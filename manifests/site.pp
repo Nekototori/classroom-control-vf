@@ -43,6 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
 include role::classroom
+ include skeleton
+ 
  
 }
 notify { "It's a TEST!!": }
