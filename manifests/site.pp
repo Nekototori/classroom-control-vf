@@ -54,7 +54,7 @@ file { '/etc/motd' :
 }   
 
 if  $facts['is_virtual'] {
-    notice { "this is a ${virtual_type}" }
+    notice("this is a ${virtual_type}")
  }
   
  
