@@ -46,7 +46,7 @@ node default {
   
 # if $facts['is_virtual'] {
  # $virtual_type = capitalize($facts['virtual'])
-    notify { "This is a ${virtual_type}!": } 
+#    notify { "This is a ${virtual_type}!": } 
 # Class test
 # exec { 'My Try':
 #  path => ['/usr/local/bin'],
@@ -71,4 +71,4 @@ node default {
  #   provider => gem,
  #   }
 }
-# notify { "It's a TEST!!  Exercise 12.2": }
+notify { "It's a TEST!!  Exercise 12.2": }
