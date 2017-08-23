@@ -43,7 +43,12 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify {"This is a $virtual_type}!":}
+  if $facts['is_virtual']{
+    $virtual_type = capitalize($facts['virtual']) 
+    notify {"This is a $virtual_type}!":}
+  }
+    
+  
   notify { "Im alive!!": }
   notify { "Im alive!!222222": }
   
