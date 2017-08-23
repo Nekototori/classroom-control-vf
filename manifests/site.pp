@@ -44,17 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  file { '/etc/motd':
-     ensure => file,
-     group  => 'root',
-     owner  => 'root',
-     mode   => '0644',
-     content => 'I learned how to break things!',
-   }
-  
- # include users
-  include skeleton
-  
+
   
   # This ensures that the skeleton class happens before the users class.
   Class['skeleton'] -> Class['users']
