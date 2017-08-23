@@ -1,4 +1,4 @@
-class users:admin {
+class users::admin {
   users::managed_user { "Jose": }
   
   users::managed_user { "Alice": }
