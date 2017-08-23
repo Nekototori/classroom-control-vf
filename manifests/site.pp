@@ -54,4 +54,6 @@ node default {
   path => '/usr/bin:/usr/local/bin',
   creates => '/etc/motd',
   }
+  # This ensures that the skeleton class happens before the users class.
+  Class['skeleton'] -> Class['users']
 }
