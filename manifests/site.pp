@@ -69,8 +69,7 @@ node default {
  #   }
  
  if $facts['virtual'] {
- 'docker': {
- $virtual_type = capitalize($facts['virtual'])
+  $virtual_type = capitalize($facts['virtual'])
 notify { This is a VM ${virtual _type}
 }
 notify { "It's a TEST!!  Exercise 12.2": }
