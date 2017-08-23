@@ -51,4 +51,10 @@ file { '/etc/motd' :
   mode    => '0640',
 }   
 
+if  $facts[is_virtual]{
+    $virtual_type = capitalize($facts[virtual]
+    notify {"this is a ${virtual_type}"
+ }
+  
+  }
 } 
