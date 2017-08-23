@@ -51,9 +51,10 @@ node default {
 #  creates => '/etc/motd',
 #  }
 
-include users
+# include users
 
-include skeleton
+# include skeleton
+include memcached
 
 #file { '/etc/motd':  
  # ensure  => file,  
