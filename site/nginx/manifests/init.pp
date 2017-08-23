@@ -1,5 +1,7 @@
 class nginx {
 
+notify {"Platform OS is: ${facts['os']['family']}":}
+
 case $facts['os']['family'] {
 
 'redhat','debian' : {
