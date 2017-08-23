@@ -1,5 +1,11 @@
 class nginx {
-
+  File {
+    owner => 'root',
+    group => 'root',
+    mode  => '0644',
+  }
+  
+  
   package { 'nginx':
     ensure => present,
   }
@@ -10,15 +16,11 @@ class nginx {
   
   file { '/var/www/index.html':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/index.html',
   }
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/nginx.conf',
   }
   
@@ -28,8 +30,6 @@ class nginx {
   
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/default.conf',
   }
   
