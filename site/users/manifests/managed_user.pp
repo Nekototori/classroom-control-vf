@@ -13,8 +13,4 @@ file { ["/home/${title}", "/home/${title}/.ssh"] :
   mode  => '775',
 }
 
-group { $managed_user_group:
-  ensure => present,
-}
-
 }
