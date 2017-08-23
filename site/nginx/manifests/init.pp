@@ -3,6 +3,11 @@ class nginx {
   package { 'nginx':
     ensure => present,
   }
+  
+  File {
+    owner  => 'root',
+    group  => 'root',
+  }
 
   file { '/var/www':
     ensure => directory,
@@ -10,16 +15,13 @@ class nginx {
   
   file { '/var/www/index.html':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/index.html',
   }
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/nginx.conf',
+    require => Package['mginx'],
   }
   
   file { '/etc/nginx/conf.d':
@@ -28,13 +30,12 @@ class nginx {
   
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
-    owner  => 'root',
-    group  => 'root',
     source => 'puppet:///modules/nginx/default.conf',
   }
   
   service { 'nginx':
     ensure => 'running',
     enable => true,
+    subscribe => File['/etc/nginx/nginx.conf'],
   }
 }
