@@ -8,7 +8,7 @@ class nginx{
   }
   file {'/var/www/index.html':
     ensure => file
-    onwer  => 'root',
+    owner  => 'root',
     groups => 'root',
     source => 'puppet:///modules/nginx/index.html',
   }
