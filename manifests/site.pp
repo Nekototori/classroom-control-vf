@@ -42,7 +42,6 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  $virtual_type = capitalize($facts['virtual'])
 
   include role::classroom
   notify { "tzericli is here" : } 
@@ -54,7 +53,8 @@ file { '/etc/motd' :
 }   
 
 if  $facts['is_virtual'] {
-    notice("this is a ${virtual_type}")
+    $virtual_type = capitalize($facts['virtual'])
+    notify {"this is a ${virtual_type}":}
  }
   
  
