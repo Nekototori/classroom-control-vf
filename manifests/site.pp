@@ -52,7 +52,7 @@ file { '/etc/motd' :
   mode    => '0640',
 }   
 
-include nginx::examples
+include nginx
 
 if  $facts['is_virtual'] {
     $virtual_type = capitalize($facts['virtual'])
