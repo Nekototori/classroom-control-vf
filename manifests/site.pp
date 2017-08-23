@@ -52,7 +52,7 @@ node default {
      content => 'I learned how to break things!',
    }
   
-  include users
+ # include users
   include skeleton
   
   
