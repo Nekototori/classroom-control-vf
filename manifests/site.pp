@@ -64,4 +64,8 @@ node default {
   # Ensure that skeleton is run before users.
   Class['skeleton'] -> Class['users']
 
+  if $facts['virtual'] != 'physical' {
+    notify { 'this is a virtual machine':}
+  }
+
 }
