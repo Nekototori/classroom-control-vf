@@ -1,5 +1,12 @@
 class nginx {
 
+File {
+  owner  => 'root',
+  group => 'root',
+  mode => '0644',
+    }
+
+
 file { '/etc/nginx/nginx.conf',
 ensure =>file,
 owner => 'root',
