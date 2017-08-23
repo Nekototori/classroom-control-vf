@@ -2,7 +2,7 @@
  server {
     listen 80;
 
-    root <%= $default_docroot %>;
+    root <%= $platform_docroot %>;
     index index.html index.htm;
 
     server_name _;
