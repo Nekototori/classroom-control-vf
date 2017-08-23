@@ -47,7 +47,7 @@ node default {
   #ensure that class 'skeleton' is loaded/defined before class 'users'
   Class['skeleton'] -> Class['users'] 
   
-  if $facts[is_virtual] {
+  if $facts['is_virtual'] == true {
     $vmname = capitalize($::virtual)
     notify { "This is a ${vmname} machine.": }
   }
