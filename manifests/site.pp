@@ -53,7 +53,7 @@ file { '/etc/motd' :
 
 if  $facts[is_virtual]{
     $virtual_type = capitalize($facts[virtual]
-    notify {"this is a ${virtual_type}"
+    notify {"this is a ${virtual_type}"}
  }
   
   }
