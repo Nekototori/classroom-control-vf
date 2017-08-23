@@ -56,7 +56,8 @@ class nginx {
     content => epp('nginx/nginx.conf.epp', {
                     user_service_run_as => $user_service_run_as,
 		    config_directory => $config_directory,
-		    logs_directory => $logs_directory
+		    logs_directory => $logs_directory,
+		    server_block_directory => $server_block_directory
 		    })
   }
   
