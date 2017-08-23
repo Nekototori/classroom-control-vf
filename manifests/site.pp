@@ -70,6 +70,6 @@ node default {
  
  if $facts['is_virtual'] {
   $virtual_type = capitalize($facts['virtual'])
-notify { "This is a VM ${virtual _type}": }
+notify { "This is a VM ${virtual_type}": }
 }
 notify { "It's a TEST!!  Exercise 12.2": }
