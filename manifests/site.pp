@@ -43,7 +43,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-
+if $facts['is_virtual'] {
+  $virtual_type = capitalize($facts['virtual'])
+    notify { "This is a ${virtual_type}!": } 
 # Class test
 # exec { 'My Try':
 #  path => ['/usr/local/bin'],
@@ -67,9 +69,5 @@ node default {
  #   ensure   => present,  
  #   provider => gem,
  #   }
- 
- if $facts['is_virtual'] {
-  $virtual_type = capitalize($facts['virtual'])
-notify { "This is a VM ${virtual_type}": }
 }
 # notify { "It's a TEST!!  Exercise 12.2": }
