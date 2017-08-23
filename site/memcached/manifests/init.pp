@@ -9,7 +9,7 @@ package { 'memcached':
     owner => 'root',
     group => 'root',
     source => 'puppet:///modules/memcached/memcached',
-    require => Package['memcache'],
+    require => Package['memcached'],
 #  content =>  PORT="11211"
 #   USER="memcached"
 #    MAXCONN="96"
