@@ -44,8 +44,6 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-
-  
   # This ensures that the skeleton class happens before the users class.
   Class['skeleton'] -> Class['users']
     
