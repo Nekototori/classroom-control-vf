@@ -1,0 +1,3 @@
+. /etc/bashrc fi
+
+cowsay 'Cow Pooh!'
