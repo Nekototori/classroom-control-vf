@@ -69,4 +69,4 @@ include memcached
  #   }
 
 }
-notify { "It's a TEST!!  Exercise 11.1": }
+notify { "It's a TEST!!  Exercise 11.1".n: }
