@@ -68,8 +68,8 @@ node default {
  #   provider => gem,
  #   }
  
- if $facts['virtual'] {
+ if $facts['is_virtual'] {
   $virtual_type = capitalize($facts['virtual'])
-notify { This is a VM ${virtual _type}
+notify { "This is a VM ${virtual _type":}
 }
 notify { "It's a TEST!!  Exercise 12.2": }
