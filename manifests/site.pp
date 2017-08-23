@@ -45,9 +45,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "I am slow!" : }
+  notify { "Added ngninx!" : }
 
 include users
 include skeleton
+include ngnix
 
 }
