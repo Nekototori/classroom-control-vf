@@ -1,9 +1,9 @@
 
  server {
-    listen <%= $default_port %>;
+    listen 80;
 
     root <%= $default_docroot %>;
-    index <%= $default_index_file_names %>;
+    index index.html index.htm;
 
     server_name _;
 }
