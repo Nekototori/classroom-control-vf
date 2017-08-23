@@ -57,5 +57,5 @@ if  $facts[is_virtual]{
     notify {"this is a ${virtual_type}"}
  }
   
-  }
+ 
 } 
