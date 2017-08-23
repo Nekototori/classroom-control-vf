@@ -10,11 +10,11 @@ package { 'memcached':
   group => 'root',
   source => 'puppet:///modules/memcached/memcached',
   require => Package['memcache']
-  content =>  PORT="11211"
-    USER="memcached"
-    MAXCONN="96"
-    CACHESIZE="32"
-    OPTIONS=""
+#  content =>  PORT="11211"
+#   USER="memcached"
+#    MAXCONN="96"
+#    CACHESIZE="32"
+#    OPTIONS=""
   
   }
   service { 'memcached':
