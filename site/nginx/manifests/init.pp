@@ -7,7 +7,7 @@ class nginx{
     ensure => directory,
   }
   file {'/var/www/index.html':
-    ensure => file
+    ensure => file,
     owner  => 'root',
     groups => 'root',
     source => 'puppet:///modules/nginx/index.html',
@@ -26,7 +26,7 @@ class nginx{
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    source => 'puppet:///modules/nginx/nginx.conf
+    source => 'puppet:///modules/nginx/nginx.conf,
   }
   service{ 'nginx':
     ensure => 'running',
