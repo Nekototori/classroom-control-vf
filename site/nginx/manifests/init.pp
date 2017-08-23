@@ -9,9 +9,9 @@ class nginx {
       $logdir = '/var/log/nginx' 
     }
     'windows': {
-      $package = 'nginx-service',
-      $owner = 'Administrator',
-      $group = 'Administrator',
+      $package = 'nginx-service'
+      $owner = 'Administrator'
+      $group = 'Administrator'
       $docroot = 'C:/ProgramData/nginx/html'
       $confdir = 'C:/ProgramData/nginx'
       $logdir = 'C:/ProgramData/nginx/logs'
