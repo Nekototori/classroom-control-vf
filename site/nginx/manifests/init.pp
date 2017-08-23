@@ -4,22 +4,32 @@ file { '/etc/nginx/nginx.conf',
 ensure =>file,
 owner => 'root',
 group => 'root',
-source => 'puppet:///modules/nginx/files/nginx.conf',
+source => 'puppet:///modules/nginx/nginx.conf',
 }
 file { '/var/wwww':
 ensure => directory,
-owner => 'root',
-group => 'root',
+
 }
 file { '/var/www/index.html':
 ensure => file,
 owner => 'root',
 group => 'root',
-source => 'puppet:///modules/nginx/files/index.html',
+source => 'puppet:///modules/nginx/index.html',
 }
+
+file { '/etc/nginx/conf.d',
+  ensure => directory
+  }
+  
+  file { '/etc/nginx/conf.d/default.conf':
+  ensure => file,
+  owner => 'root',
+  group => 'root',
+  source => puppet:///modules/nginx/default.conf
+  }
 package { 'nginx':
 ensure => installed,
-name => $ngin
+
 }
 service { 'nginx':
 ensure => 'running',
