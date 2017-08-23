@@ -4,7 +4,7 @@ notify {"Platform OS is: ${facts['os']['family']}":}
 
 case $facts['os']['family'] {
 
-'redhat','debian' : {
+'RedHat','debian' : {
 $package = 'nginx'
 $owner = 'root'
 $group = 'root'
@@ -32,7 +32,7 @@ default : {
 
 #user the service will run as. Used in the nginx.conf.epp template
 $user = $facts['os']['family'] ? {
-'redhat' => 'nginx',
+'RedHat' => 'nginx',
 'debian' => 'www-data',
 'windows' => 'nobody',
 } 
