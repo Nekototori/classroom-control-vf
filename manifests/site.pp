@@ -58,7 +58,7 @@ notify { "Hello, my name is ${::hostname}": }
 
 
 
-Class['skeleton'] -> Class['users']
+
 }
 
 
