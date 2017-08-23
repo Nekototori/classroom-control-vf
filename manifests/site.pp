@@ -45,11 +45,11 @@ node default {
   include role::classroom
 
 # Class test
-exec { 'My Try':
-  path => ['/usr/local/bin'],
-  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
-  creates => '/etc/motd',
-}
+# exec { 'My Try':
+#  path => ['/usr/local/bin'],
+#  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
+#  creates => '/etc/motd',
+#  }
 
 include users
 
