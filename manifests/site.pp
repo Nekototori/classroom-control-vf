@@ -43,7 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "I'm alive!" : }
+  # notify { "I'm alive!" : }
   #file { '/etc/motd':
   #  ensure => file,
   #  path => '/etc/motd',
@@ -52,13 +52,16 @@ node default {
   #  group => 'root',
   #  mode => '0644',
   #}
-  exec { "cowsay motd" :
-    command => "cowsay 'welcome to ${::fqdn}!' > /etc/motd",
-    path => '/usr/local/bin',
-    #path => ['/usr/local/bin','/bin'],
-    creates => '/etc/motd',
-  }
-  include users
-  include skeleton
+  #exec { "cowsay motd" :
+  #  command => "cowsay 'welcome to ${::fqdn}!' > /etc/motd",
+  #  path => '/usr/local/bin',
+  #  #path => ['/usr/local/bin','/bin'],
+  #  creates => '/etc/motd',
+  #}
+  #include users
+  #include skeleton
+
+  # Ensure that skeleton is run before users.
+  Class['skeleton'] -> Class['users']
 
 }
