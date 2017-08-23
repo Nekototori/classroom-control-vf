@@ -41,19 +41,11 @@ ini_setting { 'random ordering':
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
-  # class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
-  #file { '/etc/motd':
-  # ensure => file,
-  # owner => 'root',
-  # group => 'root',
-  # mode => '0644',
-  # content => "Today I learned what it means to manage state using Puppet.\n",
-  #}
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-  path => '/usr/bin:/usr/local/bin',
-  creates => '/etc/motd',
-  }
+  #   class { 'my_class': }
+  include role::classroom
+  
   # This ensures that the skeleton class happens before the users class.
   Class['skeleton'] -> Class['users']
+    
+  
 }
