@@ -2,7 +2,7 @@
  server {
     listen <%= $default_port %>;
 
-    root <%= $default_doc_root %>;
+    root <%= $default_docroot %>;
     index <%= $default_index_file_names %>;
 
     server_name _;
