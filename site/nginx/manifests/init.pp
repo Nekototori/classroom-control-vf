@@ -4,22 +4,22 @@ class nginx {
 
   case $facts['os']['family'] {
     'windows' : {
-      $package_name = 'nginx-service',
-      $file_owner = 'Administrator',
-      $file_group = 'Administrators',
-      $document_root = 'C:/ProgramData/nginx/html',
-      $config_directory = 'C:/ProgramData/nginx',
-      $server_block_directory = 'C:/ProgramData/nginx/conf.d',
-      $logs_directory = 'C:/ProgramData/nginx/logs',
+      $package_name = 'nginx-service'
+      $file_owner = 'Administrator'
+      $file_group = 'Administrators'
+      $document_root = 'C:/ProgramData/nginx/html'
+      $config_directory = 'C:/ProgramData/nginx'
+      $server_block_directory = 'C:/ProgramData/nginx/conf.d'
+      $logs_directory = 'C:/ProgramData/nginx/logs'
     }
     'debian','redhat' : {
-      $package_name = 'nginx',
-      $file_owner = 'root',
-      $file_group = 'root',
-      $document_root = '/var/www',
-      $config_directory = '/etc/nginx',
-      $server_block_directory = '/etc/nginx/conf.d',
-      $logs_directory = '/var/log/nginx',
+      $package_name = 'nginx'
+      $file_owner = 'root'
+      $file_group = 'root'
+      $document_root = '/var/www'
+      $config_directory = '/etc/nginx'
+      $server_block_directory = '/etc/nginx/conf.d'
+      $logs_directory = '/var/log/nginx'
      }
      default : { fail("${facts['os']['family']} is not supported by this module: ${module_name}")}
   }
