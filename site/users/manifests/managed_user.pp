@@ -6,7 +6,7 @@ define users::managed_user (
     ensure => present,
     }
     
-  file { "/home/${title}", "/home/${title}/.ssh":
+  file { ["/home/${title}", "/home/${title}/.ssh"]:
       ensure => directory,
       owner => $title,
       group => $managed_user_groupgroup,
@@ -16,3 +16,4 @@ define users::managed_user (
      group { $managed_user_group:
       ensure => present,
       }
+}
