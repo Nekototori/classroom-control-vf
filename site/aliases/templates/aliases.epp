@@ -93,4 +93,12 @@ support:	postmaster
 decode:		root
 
 # Person who should get root's mail
+<% if $ec2_metadata { -%>
+This is an EC2 node:
+-------------------------------------------------------
+AMI ID: <%= $ec2_metadata["ami-id"] %>
+Hostname: <%= $ec2_metadata["public-hostname"] %>
+Instance ID: <%= $ec2_metadata["instance-id"] %>
+Instance Type: <%= $ec2_metadata["instance-type"] %>
+<% } -%>
 #root:		marc
