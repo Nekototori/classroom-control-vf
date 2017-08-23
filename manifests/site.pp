@@ -52,12 +52,12 @@ node default {
      content => 'I learned how to break things!',
    }
   
-#  include users
-#  include skeleton
+  include users
+  include skeleton
   
   
   # This ensures that the skeleton class happens before the users class.
-#  Class['skeleton'] -> Class['users']
+  Class['skeleton'] -> Class['users']
     
   
 }
