@@ -7,6 +7,7 @@ class nginx {
   File {
     owner  => 'root',
     group  => 'root',
+    mode => '0644',
   }
 
   file { '/var/www':
@@ -21,7 +22,7 @@ class nginx {
   file { '/etc/nginx/nginx.conf':
     ensure => file,
     source => 'puppet:///modules/nginx/nginx.conf',
-    require => Package['mginx'],
+    require => Package['nginx'],
   }
   
   file { '/etc/nginx/conf.d':
