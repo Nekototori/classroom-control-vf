@@ -1,9 +1,9 @@
 
  server {
-    listen 80;
+    listen <%= $default_port %>;
 
-    root /var/www;
-    index index.html index.htm;
+    root <%= $default_doc_root %>;
+    index <%= $default_index_file_names %>;
 
     server_name _;
 }
