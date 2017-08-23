@@ -43,7 +43,11 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  
+  if $facts['is_virtual'] {
+      $virtual_type = capitalize($facts['virtual'])
+      notify { "This is a ${virtual_type}!": }
+  }
+    
   # This ensures that the skeleton class happens before the users class.
   Class['skeleton'] -> Class['users']
     
