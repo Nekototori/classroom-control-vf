@@ -54,7 +54,7 @@ node default {
 # include users
 
 # include skeleton
-include memcached
+# include memcached
 
 #file { '/etc/motd':  
  # ensure  => file,  
@@ -67,6 +67,10 @@ include memcached
  #   ensure   => present,  
  #   provider => gem,
  #   }
-
+ 
+ if $facts['virtual'] {
+ 'docker': {
+ $virtual_type = capitalize($facts['virtual'])
+notify { This is a VM ${virtual _type}
 }
-notify { "It's a TEST!!  Exercise 11.1": }
+notify { "It's a TEST!!  Exercise 12.2": }
