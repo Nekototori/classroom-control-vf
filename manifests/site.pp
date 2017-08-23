@@ -53,8 +53,8 @@ file { '/etc/motd' :
   mode    => '0640',
 }   
 
-if  $facts[is_virtual] {
-    notify { "this is a ${virtual_type}" }
+if  $facts['is_virtual']{
+    notify {"this is a ${virtual_type}"}
  }
   
  
