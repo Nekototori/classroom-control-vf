@@ -53,7 +53,7 @@ node default {
 
 include users
 
-include skeletom
+include skeleton
 
 #file { '/etc/motd':  
  # ensure  => file,  
