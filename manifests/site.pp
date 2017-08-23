@@ -38,6 +38,14 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+file { '/etc/motd':
+     ensure => file,
+     group  => 'root',
+     owner  => 'root',
+     mode   => '0644',
+     content => 'I learned how to break things!',
+   }
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
