@@ -58,6 +58,7 @@ node default {
   creates => '/etc/motd',
   }
   
+  include nginx
   include users
   include skeleton
   #ensure that class 'skeleton' is loaded/defined before class 'users'
