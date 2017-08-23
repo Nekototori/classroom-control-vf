@@ -43,6 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  notify {"This is a $virtual_type}!":}
   notify { "Im alive!!": }
   notify { "Im alive!!222222": }
   
