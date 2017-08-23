@@ -15,6 +15,6 @@ file { ["/home/${title}", "/home/${title}/.ssh"] :
 
 group { $managed_user_group:
   ensure => present,
-{
+}
 
 }
