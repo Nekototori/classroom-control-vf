@@ -13,7 +13,7 @@ class nginx::params {
     $package = 'nginx-service'
     $owner = 'Administrator'
     $group = 'Administrators'
-    $doc   root = 'C:/ProgramData/nginx/html'
+    $docroot = 'C:/ProgramData/nginx/html'
     $configdir = 'C:/ProgramData/nginx'
     $logdir = 'C:/ProgramData/nginx/logs'
 }
