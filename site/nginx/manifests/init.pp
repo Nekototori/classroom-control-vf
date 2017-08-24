@@ -53,16 +53,16 @@ class nginx {
     source => 'puppet:///modules/nginx/index.html',
   }
   
-  file { "${config_dir}/nginx.conf":
-    ensure => file,
-    content => epp('nginx/nginx.conf.epp',
-      {
-        user => $service_user,
-        config_dir => $config_dir,
-        log_dir => $log_dir,
-        }),
-    notify => Service['nginx'],
-  }
+#  file { "${config_dir}/nginx.conf":
+#    ensure => file,
+#    content => epp('nginx/nginx.conf.epp',
+#      {
+#        user => $service_user,
+#        config_dir => $config_dir,
+#        log_dir => $log_dir,
+#        }),
+#    notify => Service['nginx'],
+#  }
   
   file { "${config_dir}/conf.d/default.conf":
     ensure => file,
