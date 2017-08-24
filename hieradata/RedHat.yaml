@@ -1,2 +1,2 @@
 ---
-/var/www/training
+nginx::document_root: /var/www/training
