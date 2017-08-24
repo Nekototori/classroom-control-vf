@@ -53,13 +53,13 @@ class nginx{
                   }),
     notify => Service['nginx'],
   }
-  file {"${confdir}/conf.d/default.conf':
+  file {"${confdir}/conf.d/default.conf":
     ensure => file,
     content => epp('nginx/default.conf.epp',
                   {
                     docroot => $docroot,
                   }),
-    notify => Service['nginx'
+    notify => Service['nginx']
     }
   }
 
