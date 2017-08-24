@@ -1,3 +1,2 @@
 ---
 message: This message came from the common hiera datasource.
-profile::base::message: This is a common override for param.
