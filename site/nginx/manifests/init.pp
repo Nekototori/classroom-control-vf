@@ -47,9 +47,9 @@ file { "${docroot}/index.html":
   source => 'puppet:///modules/nginx/index.html',
 }
 
-file { ${configdir}/nginx.conf":
+file { "${configdir}/nginx.conf":
   ensure => file
-  content => epp('nginx.nginx.conf.epp
+  content => epp('nginx/nginx.conf.epp
     {
         user => $user,
         configdir => %configdir,
