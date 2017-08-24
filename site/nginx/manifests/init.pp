@@ -49,7 +49,7 @@ file { "${docroot}/index.html":
 
 file { "${configdir}/nginx.conf":
   ensure => file
-  content => epp('nginx/nginx.conf.epp
+  content => epp('nginx/nginx.conf.epp',
     {
         user => $user,
         configdir => %configdir,
@@ -60,7 +60,11 @@ file { "${configdir}/nginx.conf":
   
   file { "${configdir}/conf.d/default.conf":
     ensure => file
-    content => epp('nginx/default.conf.epp
+    content => epp('nginx/default.conf.epp',
+      {
+      docroot => $docroot,
+      }),
+      notify => Service['nginx'],
   }
   
 service { 'nginx':
