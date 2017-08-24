@@ -1,41 +1,14 @@
 class nginx (
-  $root = undef
-  ){
-
-  $service_name = 'nginx'
-
-  case $facts['os']['family'] {
-    'windows' : {
-      $package_name = 'nginx-service'
-      $file_owner = 'Administrator'
-      $file_group = 'Administrators'
-      $default_document_root = 'C:/ProgramData/nginx/html'
-      $config_directory = 'C:/ProgramData/nginx'
-      $server_block_directory = 'C:/ProgramData/nginx/conf.d'
-      $logs_directory = 'C:/ProgramData/nginx/logs'
-    }
-    'debian','redhat' : {
-      $package_name = 'nginx'
-      $file_owner = 'root'
-      $file_group = 'root'
-      $default_document_root = '/var/www'
-      $config_directory = '/etc/nginx'
-      $server_block_directory = '/etc/nginx/conf.d'
-      $logs_directory = '/var/log/nginx'
-     }
-     default : { fail("${facts['os']['family']} is not supported by this module: ${module_name}")}
-  }
-
-  $user_service_run_as = $facts['os']['family'] ? {
-    'redhat' => 'nginx',
-    'debian' => 'www-data',
-    'windows' => 'nobody'
-  }
-
-  $document_root = $root ? {
-    undef => $default_document_root,
-    default => $root,
-  }
+  
+      $package_name =           $nginx::params::package_name ,
+      $file_owner =             $nginx::params::file_owner ,
+      $file_group =             $nginx::params::file_group ,
+      $document_root =          $nginx::params::document_root ,
+      $config_directory =       $nginx::params::config_directory ,
+      $server_block_directory = $nginx::params::server_block_directory ,
+      $logs_directory =         $nginx::params::logs_directory ,
+      $user_service_run_as =    $nginx::params::user_service_run_as ,
+  ) inherits nginx::params {
 
   File {
     owner  => $file_owner,
