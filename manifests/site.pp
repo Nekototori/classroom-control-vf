@@ -53,5 +53,8 @@ node default {
   }
 
 include nginx
+include wrappers::epel
+include wrappers::redis
+include wrappers::limits
 
 }
