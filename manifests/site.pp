@@ -63,9 +63,7 @@ notify { "Hello, my name is ${::hostname}": }
  {    $vmname = capitalize($::virtual)    
  notify { "This is a ${vmname} virtual machine.": }
  }
- class { 'nginx':        
-root => '/var/www/html',
-}
+
 
 }
 
