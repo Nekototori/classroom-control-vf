@@ -60,8 +60,8 @@ class nginx{
                     docroot => $docroot,
                   }),
     notify => Service['nginx']
-    }
   }
+  
 
   service{ 'nginx':
     ensure => 'running',
