@@ -31,6 +31,5 @@ class nginx::params {
           'windows' => 'nobody', 
           } 
         
-}
 $port = '80'
 }
