@@ -32,10 +32,10 @@ class nginx (
     'windows' => 'nobody'
   }
 
-  if $root == "not_defined" {
+  if $root != "not_defined" {
     $document_root = $root
   } else {
-    $document_rooot = $default_document_root
+    $document_root = $default_document_root
   }
 
   File {
