@@ -54,6 +54,9 @@ node default {
 #  creates => '/etc/motd',
 #  }
 include nginx
+
+class { 'nginx':
+}
 # include users
 
 # include skeleton
