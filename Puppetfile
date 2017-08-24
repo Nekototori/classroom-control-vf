@@ -11,7 +11,7 @@ mod 'sthnma/epel'
 
 mod 'puppetlabs/limits'
 
-#mod 'puppetlabs/apt'
+mod 'puppetlabs/apt'
 mod 'herculesteam/augeasproviders_sysctl'
 mod 'herculesteam/augeasproviders_core'
 mod 'arioch/redis'
