@@ -48,7 +48,7 @@ file { "${docroot}/index.html":
 }
 
 file { "${configdir}/nginx.conf":
-  ensure => file
+  ensure => file,
   content => epp('nginx/nginx.conf.epp',
     {
         user => $user,
