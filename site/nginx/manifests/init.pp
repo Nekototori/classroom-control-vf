@@ -1,5 +1,16 @@
 class nginx {
 
+case $facts['os']['family'] {
+'redhat','debain' : {
+$package = 'nginx'
+$owner = 'root'
+$group = 'root'
+$docroot = '/var/www'
+$configdir = '/etc/nginx'
+}
+'windows' : {
+
+}
 File {
   owner  => 'root',
   group => 'root',
