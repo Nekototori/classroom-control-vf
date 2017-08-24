@@ -56,6 +56,7 @@ node default {
 include nginx
 
 class { 'nginx':
+  docroot => '/var/abc'
 }
 # include users
 
