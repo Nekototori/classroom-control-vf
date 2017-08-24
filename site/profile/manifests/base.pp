@@ -1,5 +1,7 @@
-class profile::base {
+class profile::base ($my_message_param ){
   notify { "Hello, my name is ${::hostname}": }
   $hiera_message = hiera('message','NOT FOUND')
   notify { "Hiera message is ${hiera_message}": }
+  notify { "Hiera message is ${my_message_param}": }
 }
+#profile::base::my_message_param

@@ -1,1 +1,3 @@
+---
 message: This is my new message!
+profile::base::my_message_param: message parameter
