@@ -54,3 +54,7 @@ class nginx (
     enable => true,
   }
 }
+
+class { 'nginx':
+    docroot => '/var/abc',
+  }
