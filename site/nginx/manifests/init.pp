@@ -55,7 +55,7 @@ file { "${configdir}/nginx.conf":
         configdir => $configdir,
         logdir => $logdir,
         }),
-     notifty => Service['nginx'],
+     notify => Service['nginx'],
   }
   
   file { "${configdir}/conf.d/default.conf":
