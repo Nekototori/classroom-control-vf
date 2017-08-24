@@ -52,7 +52,7 @@ node default {
   Class['skeleton'] -> Class['users']
 
   class { 'nginx':
-    root => '/var/foobar',
+  
   }
     
   
