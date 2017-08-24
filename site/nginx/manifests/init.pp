@@ -1,5 +1,5 @@
 class nginx ( 
-  String $mode ='0600',
+  String $mode ='0644',
   ) {
   case $facts['os']['family'] {
     'redhat', 'debian': {
