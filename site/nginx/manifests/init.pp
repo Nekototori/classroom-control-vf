@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  $root
+  ){
 
   $service_name = 'nginx'
 
@@ -7,7 +9,7 @@ class nginx {
       $package_name = 'nginx-service'
       $file_owner = 'Administrator'
       $file_group = 'Administrators'
-      $document_root = 'C:/ProgramData/nginx/html'
+      $default_document_root = 'C:/ProgramData/nginx/html'
       $config_directory = 'C:/ProgramData/nginx'
       $server_block_directory = 'C:/ProgramData/nginx/conf.d'
       $logs_directory = 'C:/ProgramData/nginx/logs'
@@ -16,7 +18,7 @@ class nginx {
       $package_name = 'nginx'
       $file_owner = 'root'
       $file_group = 'root'
-      $document_root = '/var/www'
+      $default_document_root = '/var/www'
       $config_directory = '/etc/nginx'
       $server_block_directory = '/etc/nginx/conf.d'
       $logs_directory = '/var/log/nginx'
@@ -28,6 +30,12 @@ class nginx {
     'redhat' => 'nginx',
     'debian' => 'www-data',
     'windows' => 'nobody'
+  }
+
+  if $root {
+    $document_root = $root
+  } else {
+    $document_rooot = $default_document_root
   }
 
   File {
