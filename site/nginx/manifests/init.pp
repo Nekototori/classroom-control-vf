@@ -5,7 +5,7 @@ $group = $nginx::params::group,
 $docroot = $nginx::params::docroot,
 $configdir = $nginx::params::confdir,
 $logdir = $nginx::params::logdir,
-# $user = $nginx::params::user,
+$user = $nginx::params::user,
 $port = $nginx::params::port
 ) inherits nginx::params {
 
@@ -32,7 +32,7 @@ file { "${configdir}/nginx.conf":
   ensure => file,
   content => epp('nginx/nginx.conf.epp',
     {
-        owner => $owner,
+        user => $user,
         configdir => $configdir,
         logdir => $logdir,
         }),
