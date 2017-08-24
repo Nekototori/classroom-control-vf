@@ -1,6 +1,6 @@
-class nginx {
-  $root,
-} {
+class nginx (
+  $root = undef,
+){
   case $facts['os']['family'] {
     'RedHat' : {
       $service_user = 'nginx'
