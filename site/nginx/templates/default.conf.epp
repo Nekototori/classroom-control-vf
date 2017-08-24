@@ -1,5 +1,9 @@
-node default { 
-        class { 'nginx':
-        root => '/var/www',
-    }
+server  { 
+        listen 80;
+        
+        root <%= $docroot %>;
+       index index.html index.html;
+       
+       server_name_;
+    
   }
