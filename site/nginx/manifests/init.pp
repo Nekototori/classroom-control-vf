@@ -23,9 +23,9 @@ fail("Module ${module_name} is not supported on ${facts['os']['family']}")
 }
 # user the service will run as. Used in the nginx.conf.epp template
 $user = $facts['os']['family'] ? {
-'redhat' => 'nginx',
-'debian' => 'www-data',
-'windows' => 'nobody',
+  'redhat' => 'nginx',
+  'debian' => 'www-data',
+  'windows' => 'nobody',
 }
 
 File {
@@ -33,15 +33,18 @@ File {
   group => $group,
   mode => '0644',
     }
-
+package { $package:
+  ensure => present,
+  }
 
 file { [ ${docroot}, "${configdir}/conf.d"]:
   ensure =>directory,
 }
+
 file { '/var/wwww':
 ensure => directory,
-
 }
+
 file { "${docroot}/index.html":
   ensure => file,
   source => 'puppet:///modules/nginx/index.html',
@@ -62,6 +65,7 @@ file { ${configdir}/nginx.conf":
     ensure => file
     content => epp('nginx/default.conf.epp
   }
+  
 service { 'nginx':
 ensure => 'running',
 enable => 'true',
