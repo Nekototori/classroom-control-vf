@@ -18,14 +18,14 @@ events {
 
 
 http {
-    include       <%= $config_dir %>/mime.types;
+    include       <%= $confdir %>/mime.types;
     default_type  application/octet-stream;
 
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
-    access_log  <%= $log_dir %>access.log  main;
+    access_log  <%= $logdir %>access.log  main;
 
     sendfile        on;
     #tcp_nopush     on;
@@ -37,6 +37,6 @@ http {
 
     # Load config files from the /etc/nginx/conf.d directory
     # The default server is in conf.d/default.conf
-    include <%= $config_dir %>/conf.d/*.conf;
+    include <%= $confdir %>/conf.d/*.conf;
 
 }
