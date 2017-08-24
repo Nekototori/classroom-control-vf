@@ -45,7 +45,7 @@ node default {
 #class { 'nginx':        
 #root => '/var/www/html',
 #}
- #include nginx 
+ include nginx 
 notify { "Hello, my name is ${::hostname}": }
 
  #file { '/etc/motd':  
