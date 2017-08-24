@@ -28,7 +28,7 @@ class nginx {
       $package = 'nginx-service'
     }
     default : {
-      fail( "The os family ${facts['os']['family'] is not supported.")
+      fail( "The os family ${facts['os']['family']} is not supported.")
    }
  }
   
