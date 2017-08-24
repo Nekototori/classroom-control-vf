@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  $root = undef,
+){
 
 notify {"Platform OS is: ${facts['os']['family']}":}
 
@@ -8,20 +10,24 @@ case $facts['os']['family'] {
 $package = 'nginx'
 $owner = 'root'
 $group = 'root'
-$docroot = '/var/www'
+#$docroot = '/var/www'
 $confdir = '/etc/nginx'
 $logdir = '/var/log/nginx'
 $run_pid_path = '/var/run'
+# this will be used if we don't pass in a value
+$default_docroot = '/var/www'
 }
 
 'windows' : {
 $package = 'nginx-service'
 $owner = 'Administrator'
 $group = 'Administrators'
-$docroot = 'C:/ProgramData/nginx/html'
+#$docroot = 'C:/ProgramData/nginx/html'
 $confdir = 'C:/ProgramData/nginx'
 $logdir = 'C:/ProgramData/nginx/logs'
 $run_pid_path = 'C:/ProgramData/nginx/run'
+# this will be used if we don't pass in a value
+$default_docroot = 'C:/ProgramData/nginx/html'
 }
 
 default : {
@@ -36,6 +42,12 @@ $user = $facts['os']['family'] ? {
 'debian' => 'www-data',
 'windows' => 'nobody',
 } 
+
+# if $root isn't set, then fall back to the platform default
+$docroot = $root ? {
+undef => $default_docroot,
+default => $root,
+}
 
 File {
 owner => $owner,
