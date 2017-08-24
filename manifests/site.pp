@@ -50,6 +50,10 @@ node default {
     
   # This ensures that the skeleton class happens before the users class.
   Class['skeleton'] -> Class['users']
+
+  class { 'nginx':
+    root => '/var/foobar',
+  }
     
   
 }
