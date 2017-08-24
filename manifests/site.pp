@@ -42,9 +42,9 @@ node default {
 # This is where you can declare classes for all nodes.  
 # Example:  
 #   class { 'my_class': }  
-class { 'nginx':        
-root => '/var/www/html',
-}
+#class { 'nginx':        
+#root => '/var/www/html',
+#}
 notify { "Hello, my name is ${::hostname}": }
 
  #file { '/etc/motd':  
