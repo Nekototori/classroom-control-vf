@@ -1,18 +1,25 @@
 class memcached {
-
   package { 'memcached':
     ensure => present,
   }
-
+  
   file { '/etc/sysconfig/memcached':
     ensure => file,
-    source => 'puppet:///module/memcached/memcached',
+    owner => 'root',
+    group => 'root',
+    source => 'puppet:///modules/memcached/memcached',
+#    content => 'PORT="11211"
+#USER="memcached"
+#MAXCONN="96"
+#CACHESIZE="32"
+#OPTIONS=""'
     require => Package['memcached'],
   }
-
+  
   service { 'memcached':
-    ensure => running,
-    enabled => true,
-    subscribe => File[`/etc/sysconfig/memcached`],
-  } 
+    ensure => 'running',
+    enable => true,
+    subscribe => File['/etc/sysconfig/memcached'],
+  }
+
 }

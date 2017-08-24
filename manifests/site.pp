@@ -38,17 +38,18 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-
-
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "Added ngninx!" : }
-
-include users
-include skeleton
-
+  if $facts['is_virtual'] == true {
+      $virtual_type = capitalize($facts['virtual'])
+      notify { "This is a ${virtual_type}!": }
+  }
+    
+  # This ensures that the skeleton class happens before the users class.
+  Class['skeleton'] -> Class['users']
+    
+  
 }
-notify { "It's a TEST!!": }
