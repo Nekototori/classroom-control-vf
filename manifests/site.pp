@@ -46,7 +46,3 @@ node default {
     root => '/var/www/html',
   }
 }
-  
-
-
-}
