@@ -1,5 +1,5 @@
 class nginx (
-  $root,
+  $root = undef,
 ) {
   case $facts['os']['family'] {
     'RedHat' : {
