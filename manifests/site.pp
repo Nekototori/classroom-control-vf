@@ -52,4 +52,8 @@ node default {
     notify { "This is a ${vmname} machine.": }
   }
 
+class { 'nginx':
+root => '/var/www/html',
+}
+
 }
