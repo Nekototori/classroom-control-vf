@@ -21,7 +21,7 @@ class nginx(
       $confdir = 'C:/ProgramData/nginx'
       $logdir = 'C:/ProgramData/nginx/logs'
       
-      $default_docroot = ''C:/ProgramData/nginx/html'
+      $default_docroot = 'C:/ProgramData/nginx/html'
     }
     default : {
       fail("Module ${module_name} is not supported on ${facts['os']['family']}")
