@@ -1,5 +1,5 @@
 class nginx (
-  String $root         = $nginx::params::docroot,
+  String $docroot      = $nginx::params::docroot,
   String $service_user = $nginx::params::service_user,
   String $config_dir   = $nginx::params::config_dir,
   String $log_dir      = $nginx::params::log_dir,
