@@ -1,6 +1,12 @@
 class nginx (
-  $root = undef,
-) {
+  String $root         = $nginx::params::docroot,
+  String $service_user = $nginx::params::service_user,
+  String $config_dir   = $nginx::params::config_dir,
+  String $log_dir      = $nginx::params::log_dir,
+  String $file_owner   = $nginx::params::file_owner,
+  String $file_group   = $nginx::params::file_group,
+  String $package      = $nginx::params::package,
+) inherits nginx::params {
   
   
   File {
