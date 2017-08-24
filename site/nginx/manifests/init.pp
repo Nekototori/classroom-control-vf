@@ -8,7 +8,7 @@ case $facts['os']['family'] {
   $docroot = '/var/www'
   $configdir = '/etc/nginx'
   $logdir = '/var/log/nginx'
-}
+  }
 'windows' : {
   $package = 'nginx-service'
   $owner = 'Administrator'
@@ -16,10 +16,10 @@ case $facts['os']['family'] {
   $docroot = 'C:/ProgramData/nginx/html'
   $configdir = 'C:/ProgramData/nginx'
   $logdir = 'C:/ProgramData/nginx/logs'
-}
+  }
 default : {
 fail("Module ${module_name} is not supported on ${facts['os']['family']}")
-}
+  }
 }
 # user the service will run as. Used in the nginx.conf.epp template
 $user = $facts['os']['family'] ? {
@@ -33,16 +33,13 @@ File {
   group => $group,
   mode => '0644',
     }
+    
 package { $package:
   ensure => present,
   }
 
 file { [ ${docroot}, "${configdir}/conf.d"]:
   ensure =>directory,
-}
-
-file { '/var/wwww':
-ensure => directory,
 }
 
 file { "${docroot}/index.html":
