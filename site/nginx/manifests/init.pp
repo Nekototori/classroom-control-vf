@@ -38,7 +38,7 @@ package { $package:
   ensure => present,
   }
 
-file { [ ${docroot}, "${configdir}/conf.d"]:
+file { [ $docroot, "${configdir}/conf.d"]:
   ensure =>directory,
 }
 
