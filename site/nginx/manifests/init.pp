@@ -1,4 +1,6 @@
-class nginx {
+class nginx ( 
+  String $mode ='0600',
+  ) {
   case $facts['os']['family'] {
     'redhat', 'debian': {
       $package = 'nginx'
@@ -30,7 +32,7 @@ class nginx {
   File {
   owner => $owner,
   group => $group,
-  mode => '0664',
+  mode => $mode,
   }
   package { 'nginx':
     ensure => present,
