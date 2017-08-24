@@ -1,3 +1,3 @@
 class profile::base {
-  notify { "Hello, hiera(message) }
+  notify { "Hello, hiera('message') }
 }
