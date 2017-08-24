@@ -10,6 +10,7 @@ $docroot = '/var/www'
 $confdir = '/etc/nginx'
 $logdir = '/var/log/nginx'
 $run_pid_path = '/var/run'
+$port = '80'
 # this will be used if we don't pass in a value
 #$default_docroot = '/var/www'
 }
@@ -22,6 +23,7 @@ $docroot = 'C:/ProgramData/nginx/html'
 $confdir = 'C:/ProgramData/nginx'
 $logdir = 'C:/ProgramData/nginx/logs'
 $run_pid_path = 'C:/ProgramData/nginx/run'
+$port = '80'
 # this will be used if we don't pass in a value
 #$default_docroot = 'C:/ProgramData/nginx/html'
 }
