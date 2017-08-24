@@ -68,7 +68,7 @@ node default {
     notify { "This is a virtual machine of type: ${vm_type}\n":}
   }
 
-  class { 'nginx':
-    root => '/var/dubdubdub'
-  }
+  # class { 'nginx':
+  #   root => '/var/dubdubdub'
+  # }
 }
