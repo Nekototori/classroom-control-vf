@@ -22,6 +22,7 @@ class nginx::params {
         default : { 
         fail("Module ${module_name} is not supported on ${facts['os']['family']}") 
           } 
+        }
         # user the service will run as. Used in the nginx.conf.epp template 
         
         $user = $facts['os']['family'] ? { 
@@ -29,13 +30,7 @@ class nginx::params {
           'debian' => 'www-data', 
           'windows' => 'nobody', 
           } 
-          
-          File { 
-           owner  => $owner, 
-           group => $group, 
-           mode => '0644', 
-               } 
-
+        
 }
 $port = '80'
 }
