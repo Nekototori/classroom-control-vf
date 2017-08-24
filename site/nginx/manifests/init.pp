@@ -1,5 +1,5 @@
 class nginx (
-  $root = undef,
+  $root,
 ){
 
 notify {"Platform OS is: ${facts['os']['family']}":}
