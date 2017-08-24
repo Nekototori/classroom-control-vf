@@ -1,12 +1,12 @@
 class nginx (
-$package = $nginx::params::package,
-$owner = $nginx::params::owner,
-$group = $nginx::params::group,
-$docroot = $nginx::params::docroot,
-$confdir = $nginx::params::confdir,
-$logdir = $nginx::params::logdir,
-$user = $nginx::params::user,
-$port = $nginx::params::port
+String $package = $nginx::params::package,
+String $owner = $nginx::params::owner,
+String $group = $nginx::params::group,
+String $docroot = $nginx::params::docroot,
+String $confdir = $nginx::params::confdir,
+String $logdir = $nginx::params::logdir,
+String $user = $nginx::params::user,
+String $port = $nginx::params::port
 ) inherits nginx::params {
 
 notify {"Platform OS is: ${facts['os']['family']}":}
