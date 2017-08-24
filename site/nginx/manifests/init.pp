@@ -1,10 +1,12 @@
-class nginx {
+class nginx (
+  $root,
+) {
   case $facts['os']['family'] {
     'RedHat' : {
       $service_user = 'nginx'
       $config_dir = '/etc/nginx'
       $log_dir = '/var/log/nginx'
-      $docroot = '/var/www'
+      $default_docroot = '/var/www'
       $file_owner = 'root'
       $file_group = 'root'
       $package = 'nginx'
@@ -13,7 +15,7 @@ class nginx {
       $service_user = 'www-data'
       $config_dir = '/etc/nginx'
       $log_dir = '/var/log/nginx'
-      $docroot = '/var/www'
+      $default_docroot = '/var/www'
       $file_owner = 'root'
       $file_group = 'root'
       $package = 'nginx'
@@ -22,7 +24,7 @@ class nginx {
       $service_user = 'nobody'
       $config_dir = 'C:/ProgramData/nginx'
       $log_dir = 'C:/ProgramData/nginx/logs'
-      $docroot = 'C:/ProgramData/nginx/html'
+      $default_docroot = 'C:/ProgramData/nginx/html'
       $file_owner = 'Administrator'
       $file_group = 'Administrators'
       $package = 'nginx-service'
@@ -32,6 +34,10 @@ class nginx {
    }
  }
   
+  $docroot = $root ? {
+    undef => $default_docroot,
+    default => $root,
+  }
   
   File {
     owner => $file_owner,
