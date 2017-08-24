@@ -3,7 +3,4 @@ class profile::base (
 ) {
   notify { $message: }
   
-  class { 'nginx':
-    docroot => '/var/abc',
-  }
 }
