@@ -1,4 +1,5 @@
 ---
 message: This message came from the common hiera datasource.
 
-nginx::docroot: /var/www/html
+nginx::docroot: C:/ProgramData/nginx/html/training
+
