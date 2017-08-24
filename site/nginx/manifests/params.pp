@@ -6,7 +6,7 @@ class nginx::params {
       $owner = 'root'
       $group = 'root'
       $docroot = '/var/www'
-      $confdir = '/etc/nginx'
+      $configdir = '/etc/nginx'
       $logdir = '/var/log/nginx'
 }
   'windows' : {
@@ -14,7 +14,7 @@ class nginx::params {
     $owner = 'Administrator'
     $group = 'Administrators'
     $doc   root = 'C:/ProgramData/nginx/html'
-    $confdir = 'C:/ProgramData/nginx'
+    $configdir = 'C:/ProgramData/nginx'
     $logdir = 'C:/ProgramData/nginx/logs'
 }
 default : {
