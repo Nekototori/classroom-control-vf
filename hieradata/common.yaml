@@ -1,1 +1,5 @@
 ---
+
+message: This came from common Hiera yaml.
+
+nginx::docroot: /var/www.html
