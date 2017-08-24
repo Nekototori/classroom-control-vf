@@ -5,13 +5,12 @@ mod 'acme/ohmyzsh', '0.1.2'
 mod 'vcsrepo',
   :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo'
 
-mod 'puppetlabs/stdlib'
+mod 'stahnma-epel', '1.2.2' #Depended on by arioch-redis
+mod 'puppetlabs-stdlib', '4.19.0' #Depended on by arioch-redis
+mod 'puppetlabs-limits', '0.1.0'
 
-mod 'sthnma/epel'
+mod 'arioch-redis', '3.1.0'
 
-mod 'puppetlabs/limits'
-
-mod 'puppetlabs/apt'
-mod 'herculesteam/augeasproviders_sysctl'
-mod 'herculesteam/augeasproviders_core'
-mod 'arioch/redis'
+#Depended on by arioch-redis
+mod 'herculesteam-augeasproviders_sysctl', '2.2.0'
+mod 'herculesteam-augeasproviders_core', '2.1.3'
