@@ -45,12 +45,12 @@ class nginx{
 
   file {"${confdir}/nginx.conf":
     ensure => file,
-    content => epp('nginx/nginx/conf.epp',
+    content => epp('nginx/nginx.conf.epp',
                   {
                     user    => $user,
                     confdir => $confdir,
                     log     => $logdir,
-                  })
+                  }),
     notify => Service['nginx'],
   }
   file {"${confdir}/conf.d/default.conf':
