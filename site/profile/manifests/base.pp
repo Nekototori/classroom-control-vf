@@ -1,3 +1,3 @@
 class profile::base {
-  notify { heira('message', 'default message'): }
+  notify { hiera('message', 'default message'): }
 }
