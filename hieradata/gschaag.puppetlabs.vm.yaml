@@ -1,7 +1,2 @@
 ---
-message: This message came from the common hiera datasource.
-class profile::base {
-
-$message = hiera('message')
-  notify {  $message: }
-}
+message: "This message came from the gschaag hiera datasource."
