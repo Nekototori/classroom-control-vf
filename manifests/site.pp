@@ -42,15 +42,10 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
-  if $facts['is_virtual'] == true{
-    $virtual_type = capitalize($facts['virtual']) 
-    notify {"This is a ${virtual_type}!\n":}
+  class { 'nginx':
+    root => '/var/www/html',
   }
-    
-  
-  notify { "Im alive!!": }
-  notify { "Im alive!!222222": }
+}
   
 
 
