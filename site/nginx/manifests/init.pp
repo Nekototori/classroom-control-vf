@@ -35,7 +35,7 @@ class nginx{
   package{$package:
     ensure => present
   }
-  file {[ $docroot, "${confdir}/conf.d":
+  file {[ $docroot, "${confdir}/conf.d"]:
     ensure => directory,
   }
   file {"${docroot}/index.html":
