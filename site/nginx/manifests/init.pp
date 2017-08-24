@@ -1,5 +1,5 @@
 class nginx (
-  $root
+  $root = "not_defined"
   ){
 
   $service_name = 'nginx'
@@ -32,7 +32,7 @@ class nginx (
     'windows' => 'nobody'
   }
 
-  if $root {
+  if $root == "not_defined" {
     $document_root = $root
   } else {
     $document_rooot = $default_document_root
