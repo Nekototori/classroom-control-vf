@@ -52,7 +52,7 @@ file { "${configdir}/nginx.conf":
   content => epp('nginx/nginx.conf.epp',
     {
         user => $user,
-        configdir => %configdir,
+        configdir => $configdir,
         logdir => $logdir,
         }),
      notifty => Service['nginx'],
