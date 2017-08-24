@@ -39,10 +39,4 @@ $user = $facts['os']['family'] ? {
 'windows' => 'nobody',
 } 
 
-# if $root isn't set, then fall back to the platform default
-$docroot = $root ? {
-undef => $default_docroot,
-default => $root,
-}
-
 }
