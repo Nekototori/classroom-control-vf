@@ -62,7 +62,7 @@ node default {
   #include skeleton
 
   # Ensure that skeleton is run before users.
-  Class['skeleton'] -> Class['users']
+  #Class['skeleton'] -> Class['users']
   $vm_type = $facts['virtual']
   if $vm_type != 'physical' {
     notify { "This is a virtual machine of type: ${vm_type}\n":}
